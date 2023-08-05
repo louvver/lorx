@@ -17,7 +17,7 @@ import { EmbedBuilder } from '@discordjs/builders';
 const db = await Database.getInstance(Configuration).connect();
 
 export default class extends Command {
-	protected admin = '1135362530676572251' as const satisfies Readonly<string>;
+	protected admin = '1137302875727478845' as const satisfies Readonly<string>;
 	protected plans = ['monthly', 'annual', 'lifetime'] as ReadonlyArray<string>;
 	protected collection: Collection<Document>;
 
