@@ -23,15 +23,15 @@ export default class extends Command {
 		if (!data) return interaction.reply({ content: '`User does not exist!`', ephemeral: true });
 		const fields: RestOrArray<APIEmbedField> = [
 			{
-				name: 'Builds',
+				name: '<:shb_a_gengar:1137464565181988894> Builds',
 				value: `\`${data.builds}\``
 			},
 			{
-				name: 'Victims',
+				name: '<:shb_a_muerte:1137464788243447828> Victims',
 				value: `\`${data.victims}\``
 			},
 			{
-				name: 'Estimated profits',
+				name: '<:shb_a_weed:1137468096567853126> Estimated profits',
 				value: `\`$${data.profits} USD\``
 			}
 		];

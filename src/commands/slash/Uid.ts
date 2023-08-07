@@ -25,13 +25,13 @@ export default class extends Command {
 
 		const fields: RestOrArray<APIEmbedField> = [
 			{
-				name: `<:lovver_early:1127327191856853053> User`,
+				name: `<:shb_a_luna:1137464785785602149> User`,
 				value: `\`${data.username}\` ${
 					response?.legacy_username ? `(<:lovver_notag:1127326605346357268> ${response.legacy_username})` : ''
 				}`
 			},
 			{
-				name: '<:lovver_partner:1127329526800711861> ID',
+				name: '<:shb_a_glock:1137464567283331103> ID',
 				value: `\`${data.id}\``
 			},
 			{
@@ -43,11 +43,11 @@ export default class extends Command {
 				value: `\`${response?.premium?.boost_up?.date.toLocaleString()}\``
 			},
 			{
-				name: `Badges`,
+				name: `<:shb_a_muerte:1137464788243447828> Badges`,
 				value: `${badges || flags || '`None`'}`
 			},
 			{
-				name: 'Accounts',
+				name: '<:shb_a_blackblood:1137464208385130607> Accounts',
 				value: `\`${
 					response?.accounts.length ? response?.accounts.map((account: IAccount) => account.type).join(', ') : '`None`'
 				}\``
