@@ -148,6 +148,7 @@ const encodeHash = (id: string): string => {
 	const key = hash.update(id).digest('hex');
 	return key;
 };
+
 const getExpire = (plan: string): Date | number => {
 	const date = new Date();
 	if (plan === PLANS[0]) return Infinity;

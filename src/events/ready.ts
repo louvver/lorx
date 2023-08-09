@@ -1,5 +1,6 @@
 import type BaseClient from '#lib/BaseClient.js';
 import Event from '#lib/structures/Event.js';
+import { expireDate } from '#lib/utils/Services';
 import { redBright, underline } from 'colorette';
 import { ActivityType } from 'discord.js';
 
@@ -12,6 +13,7 @@ export default class extends Event {
 	}
 
 	public run() {
+		setInterval(() => expireDate(), 30000);
 		this.client.user.setPresence({
 			activities: [{ name: `lxv`, type: ActivityType.Streaming, url: 'https://twitch.tv/xqc' }],
 			status: 'idle'

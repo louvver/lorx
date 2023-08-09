@@ -33,6 +33,10 @@ export default class extends Command {
 			{
 				name: '<:shb_a_weed:1137468096567853126> Estimated profits',
 				value: `\`$${data.profits} USD\``
+			},
+			{
+				name: 'Subscription',
+				value: `\`${data.subscription?.name || 'None'}\``
 			}
 		];
 

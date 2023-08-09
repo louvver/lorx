@@ -31,6 +31,7 @@ export const getProfile = async (id: string): Promise<IProfile | undefined> => {
 		return {
 			id: user.id,
 			bio: user.bio,
+			subscription: user.subscription,
 			victims,
 			builds,
 			profits
@@ -39,3 +40,23 @@ export const getProfile = async (id: string): Promise<IProfile | undefined> => {
 		return undefined;
 	}
 };
+
+
+
+export const expireDate = async () => {
+	const collection = db.collection('users');
+	const date = new Date();
+	const users = await collection.find().toArray();
+	const customers = users.filter(({ subscription }) => subscription?.expire != Infinity);
+	if (!customers || !customers.length) return;
+	customers.forEach(async ({ id, username, subscription }) => {
+		if (date.getTime() === subscription.expire || new Date(subscription.expire) < date) {
+			await collection.findOneAndUpdate({ id }, {
+				$unset: {
+					subscription
+				}
+			});
+			console.log(`Licencia de ${username} ha expirado!`);
+		}
+	});
+}
