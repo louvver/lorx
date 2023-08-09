@@ -1,6 +1,6 @@
 import type BaseClient from '#lib/BaseClient.js';
 import Event from '#lib/structures/Event.js';
-import { expireDate } from '#lib/utils/Services';
+import { expireDate } from '#lib/utils/Services.js';
 import { redBright, underline } from 'colorette';
 import { ActivityType } from 'discord.js';
 
