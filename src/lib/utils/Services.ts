@@ -47,7 +47,7 @@ export const expireDate = async () => {
 	const collection = db.collection('users');
 	const date = new Date();
 	const users = await collection.find().toArray();
-	const customers = users.filter(({ subscription }) => subscription?.expires != Infinity);
+	const customers = users.filter((user) => user?.subscription && user.subscription.expires != Infinity);
 	if (!customers || !customers.length) return;
 	customers.forEach(async ({ id, username, subscription }) => {
 		if (date.getTime() === subscription.expires || new Date(subscription.expires) < date) {
